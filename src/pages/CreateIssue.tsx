@@ -10,7 +10,7 @@ const CreateIssue: React.FC = (fn) => {
 
   const handleCreate = async () => {
     if (!title.trim() || !body.trim()) return; 
-    await axios.post("http://localhost:3001/issues", { title, body });
+    await axios.post(https://gitissues-backend.onrender.com/issues", { title, body });
   alert('issue craeted successfully')
   navigate(-1)
   };
