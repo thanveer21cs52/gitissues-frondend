@@ -13,7 +13,7 @@ const EditIssue: React.FC = () => {
 
   useEffect(() => {
     if (number) {
-      axios.get<Issue>(`http://localhost:3001/issues/${number}`).then(res => {
+      axios.get<Issue>(`https://gitissues-backend.onrender.com/issues/${number}`).then(res => {
         setTitle(res.data.title);
         setBody(res.data.body);
         setState(res.data.state.toUpperCase() as "OPEN" | "CLOSED");
@@ -23,7 +23,7 @@ const EditIssue: React.FC = () => {
 
   const handleUpdate = async () => {
     if (number) {
-      await axios.patch(`http://localhost:3001/issues/${number}`, { title, body, state });
+      await axios.patch(`https://gitissues-backend.onrender.com/issues/${number}`, { title, body, state });
       navigate(`/view/${number}`);
     }
   };
