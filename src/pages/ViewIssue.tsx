@@ -10,7 +10,7 @@ const ViewIssue: React.FC = () => {
 
   useEffect(() => {
     if (number) {
-      axios.get<Issue>(`http://localhost:3001/issues/${number}`)
+      axios.get<Issue>(`https://gitissues-backend.onrender.com/issues/${number}`)
         .then(res => setIssue(res.data));
     }
   }, [number]);
