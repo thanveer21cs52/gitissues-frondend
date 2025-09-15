@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     setLoading(true);
     try {
       const res = await axios.get<Issue[]>(
-        `http://localhost:3001/issues?state=${state}`
+        `https://gitissues-backend.onrender.com/issues?state=${state}`
       );
       setIssues(res.data);
     } catch (err) {
